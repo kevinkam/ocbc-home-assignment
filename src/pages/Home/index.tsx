@@ -1,3 +1,32 @@
-const Home = ()=><div />
+import Balance from "./Balance";
+import Transactions from "./Transactions";
+import { HeaderRow, Wrapper } from "./styled";
+import { removeLocalUserData } from "../../utils";
+import { Link, useHistory } from "react-router-dom";
+import { CTAButton, FloatingActions } from "../../components/styled";
 
-export default Home
+const Home = () => {
+  const history = useHistory();
+  const onLogout = () => {
+    removeLocalUserData();
+    history.replace("/login");
+  };
+  return (
+    <>
+      <Wrapper>
+        <HeaderRow>
+          <a onClick={onLogout}>Logout</a>
+        </HeaderRow>
+        <Balance />
+        <Transactions />
+      </Wrapper>
+      <FloatingActions>
+        <CTAButton as={Link} to="/transfer">
+          Make Transfer
+        </CTAButton>
+      </FloatingActions>
+    </>
+  );
+};
+
+export default Home;

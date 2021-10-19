@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { Link, useHistory } from "react-router-dom";
 import {
   CTAButton,
+  FloatingActions,
   PageTitle,
   StyledForm,
   SystemAlert,
@@ -29,7 +30,6 @@ const Login = () => {
           updateLocalUserData({
             token: r.data.token,
             username: r.data.username,
-            accountNo: r.data.accountNo,
           });
           history.replace("/");
         })
@@ -79,12 +79,12 @@ const Login = () => {
         />
       </FormField>
       {serverError && <SystemAlert role="alert">{serverError}</SystemAlert>}
-      <div className="actions">
+      <FloatingActions>
         <CTAButton type="submit">LOGIN</CTAButton>
         <CTAButton as={Link} to="/register" className="inverted">
           REGISTER
         </CTAButton>
-      </div>
+      </FloatingActions>
     </StyledForm>
   );
 };

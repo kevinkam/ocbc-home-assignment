@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { rem } from "polished";
-import { Link } from "react-router-dom";
 
 export const PageTitle = styled.h2`
   font-size: ${rem(24)};
@@ -16,9 +15,6 @@ export const StyledForm = styled.form`
   &.loading {
     opacity: 0.5;
     pointer-events: none;
-  }
-  .actions {
-    margin-top: auto;
   }
 `;
 
@@ -54,4 +50,12 @@ export const SystemAlert = styled.div`
   border-radius: 14px;
   padding: ${rem(16)};
   font-weight: 700;
+`;
+
+export const FloatingActions = styled.div`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: ${rem(32)} ${rem(16)};
 `;

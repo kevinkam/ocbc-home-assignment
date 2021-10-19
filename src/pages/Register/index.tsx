@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import {
   CTAButton,
+  FloatingActions,
   PageTitle,
   StyledForm,
   SystemAlert,
@@ -28,12 +29,10 @@ const Register = () => {
   const mutation = useMutation(
     (values: Omit<FormValues, "confirmPassword">) =>
       submitRegister(values)
-        .then(() => submitLogin(values))
         .then((r) => {
           updateLocalUserData({
             token: r.data.token,
-            username: r.data.username,
-            accountNo: r.data.accountNo,
+            username: values.username,
           });
           history.replace("/");
         })
@@ -100,9 +99,9 @@ const Register = () => {
         />
       </FormField>
       {serverError && <SystemAlert role="alert">{serverError}</SystemAlert>}
-      <div className="actions">
+      <FloatingActions>
         <CTAButton type="submit">REGISTER</CTAButton>
-      </div>
+      </FloatingActions>
     </StyledForm>
   );
 };
