@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import AppContext from "./contexts/AppContext";
+import { Route, Switch } from "react-router-dom";
+import GlobalStyled from "./GlobalStyled";
+
+const Login = React.lazy(() => import("./pages/Login"));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContext>
+      <>
+        <GlobalStyled />
+        <React.Suspense fallback={null}>
+          <Switch>
+            <Route exact path="/login" component={Login} />
+          </Switch>
+        </React.Suspense>
+      </>
+    </AppContext>
   );
 }
 
