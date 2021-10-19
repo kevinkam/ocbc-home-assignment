@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { rem } from "polished";
+import { Link } from "react-router-dom";
 
 export const PageTitle = styled.h2`
   font-size: ${rem(24)};

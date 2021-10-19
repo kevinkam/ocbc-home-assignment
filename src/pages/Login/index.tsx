@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import {
   CTAButton,
   PageTitle,
@@ -8,9 +8,10 @@ import {
 } from "../../components/styled";
 import FormField from "../../components/FormField";
 import { useMutation } from "react-query";
-import { login } from "../../api";
+import { submitLogin } from "../../api";
 import classnames from "classnames";
 import { useState } from "react";
+import { updateLocalUserData } from "../../utils";
 
 interface FormValues {
   username: string;
@@ -18,18 +19,28 @@ interface FormValues {
 }
 
 const Login = () => {
+  const history = useHistory();
   const [serverError, setServerError] = useState<null | string>(null);
   const { register, handleSubmit, formState } = useForm<FormValues>();
   const mutation = useMutation(
     (values: FormValues) =>
-      login(values).catch((e) => {
-        const errorMessage =
-          e?.response?.data?.error ||
-          "Something went wrong, please try again later.";
-        setServerError(
-          errorMessage.slice(0, 1).toUpperCase() + errorMessage.slice(1)
-        );
-      }),
+      submitLogin(values)
+        .then((r) => {
+          updateLocalUserData({
+            token: r.data.token,
+            username: r.data.username,
+            accountNo: r.data.accountNo,
+          });
+          history.replace("/");
+        })
+        .catch((e) => {
+          const errorMessage =
+            e?.response?.data?.error ||
+            "Something went wrong, please try again later.";
+          setServerError(
+            errorMessage.slice(0, 1).toUpperCase() + errorMessage.slice(1)
+          );
+        }),
     {
       onMutate() {
         setServerError(null);

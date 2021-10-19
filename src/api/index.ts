@@ -1,4 +1,8 @@
 import ajax from "../utils/ajax";
-import { LoginPayload } from "./types";
+import { LoginPayload, LoginResponse, RegisterResponse } from "./types";
 
-export const login = (data: LoginPayload) => ajax.post("/login", data);
+export const submitLogin = (data: LoginPayload) =>
+  ajax.post<LoginResponse>("/login", data);
+
+export const submitRegister = (data: LoginPayload) =>
+  ajax.post<RegisterResponse>("/register", data);
