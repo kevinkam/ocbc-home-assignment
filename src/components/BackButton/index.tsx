@@ -1,5 +1,5 @@
 import { Wrapper } from "./styled";
-import { FaLongArrowAltLeft } from "react-icons/all";
+import { FaLongArrowAltLeft } from "react-icons/fa";
 
 const BackButton = () => (
   <Wrapper to="/">
