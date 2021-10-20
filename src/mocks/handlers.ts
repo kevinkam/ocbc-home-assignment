@@ -57,8 +57,8 @@ export const handlers = [
               amount: 310,
               transactionDate: "2021-09-05T07:29:36.633Z",
               description: "Default money-in transaction",
-              transactionType: "transferred",
-              sender: {
+              transactionType: "transfer",
+              receipient: {
                 accountNo: "4992-321-3321",
                 accountHolder: "Tim Cook",
               },
@@ -68,8 +68,8 @@ export const handlers = [
               amount: 20,
               transactionDate: "2021-09-05T07:29:36.633Z",
               description: "Default money-in transaction",
-              transactionType: "transferred",
-              sender: {
+              transactionType: "transfer",
+              receipient: {
                 accountNo: "4992-321-3321",
                 accountHolder: "Tim Cook",
               },

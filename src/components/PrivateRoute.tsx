@@ -1,23 +1,26 @@
-import { Route } from "react-router-dom";
+import { Redirect, Route, RouteProps } from "react-router-dom";
 import React from "react";
 import { getLocalUserData } from "../utils";
 
-interface PrivateRouteProps {
-  path: string;
-  withoutUserDataComponent: React.ReactElement;
-  withUserDataComponent: React.ReactElement;
+interface PrivateRouteProps extends RouteProps {
+  needAuthorised: boolean;
+  renderComponent: React.FC<any>;
 }
 const PrivateRoute: React.FC<PrivateRouteProps> = ({
   path,
-  withoutUserDataComponent,
-  withUserDataComponent,
+  needAuthorised,
+  renderComponent: RenderComponent,
+  ...rest
 }) => (
   <Route
-    exact
+    {...rest}
     path={path}
     render={() => {
       const userData = getLocalUserData();
-      return !userData ? withoutUserDataComponent : withUserDataComponent;
+      if (needAuthorised) {
+        return !userData ? <Redirect to="/login" /> : <RenderComponent />;
+      }
+      return !!userData ? <Redirect to="/" /> : <RenderComponent />;
     }}
   />
 );

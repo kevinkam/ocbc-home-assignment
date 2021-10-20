@@ -1,4 +1,4 @@
-import { Redirect, Switch } from "react-router-dom";
+import { Switch } from "react-router-dom";
 import React from "react";
 import PrivateRoute from "./components/PrivateRoute";
 
@@ -12,24 +12,23 @@ const Routing = () => {
     <React.Suspense fallback={null}>
       <Switch>
         <PrivateRoute
+          exact
           path="/login"
-          withoutUserDataComponent={<Login />}
-          withUserDataComponent={<Redirect to="/" />}
+          needAuthorised={false}
+          renderComponent={Login}
         />
         <PrivateRoute
+          exact
           path="/register"
-          withoutUserDataComponent={<Register />}
-          withUserDataComponent={<Redirect to="/" />}
+          needAuthorised={false}
+          renderComponent={Register}
         />
+        <PrivateRoute exact path="/" needAuthorised renderComponent={Home} />
         <PrivateRoute
-          path="/"
-          withoutUserDataComponent={<Redirect to="/login" />}
-          withUserDataComponent={<Home />}
-        />
-        <PrivateRoute
+          exact
           path="/transfer"
-          withoutUserDataComponent={<Redirect to="/login" />}
-          withUserDataComponent={<Transfer />}
+          needAuthorised
+          renderComponent={Transfer}
         />
       </Switch>
     </React.Suspense>

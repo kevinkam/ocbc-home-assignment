@@ -5,7 +5,11 @@ export const HeaderRow = styled.div`
   display: flex;
   justify-content: flex-end;
   padding: ${rem(32)} ${rem(16)};
-  a {
+  button {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: none;
     font-weight: 700;
     font-size: ${rem(18)};
   }

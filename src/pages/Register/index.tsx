@@ -8,7 +8,7 @@ import {
 } from "../../components/styled";
 import FormField from "../../components/FormField";
 import { useMutation } from "react-query";
-import { submitLogin, submitRegister } from "../../api";
+import { submitRegister } from "../../api";
 import classnames from "classnames";
 import { useState } from "react";
 import BackButton from "../../components/BackButton";

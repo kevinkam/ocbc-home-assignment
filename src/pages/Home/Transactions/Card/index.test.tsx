@@ -22,8 +22,8 @@ test("amount got correct className", () => {
           amount: 310,
           transactionDate: "2021-09-06T07:29:36.633Z",
           description: "Default money-in transaction",
-          transactionType: "transferred",
-          sender: {
+          transactionType: "transfer",
+          receipient: {
             accountNo: "4992-321-3321",
             accountHolder: "Tim Cook",
           },
@@ -33,5 +33,5 @@ test("amount got correct className", () => {
   );
   const group = screen.getByRole("group");
   expect(group.childNodes[1].childNodes[1]).toHaveClass("received");
-  expect(group.childNodes[2].childNodes[1]).toHaveClass("transferred");
+  expect(group.childNodes[2].childNodes[1]).toHaveClass("transfer");
 });

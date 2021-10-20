@@ -1,5 +1,3 @@
-import { useQuery } from "react-query";
-import { getBalance } from "../../../api";
 import { currencyFormatter, getLocalUserData } from "../../../utils";
 import {
   AccountTitle,
@@ -8,18 +6,21 @@ import {
   BalanceTitle,
   Wrapper,
 } from "./styled";
+import { useBalance } from "../../../hooks";
 
 const Balance = () => {
-  const query = useQuery("balance", () => getBalance().then((r) => r.data));
+  const balanceQuery = useBalance();
   const userData = getLocalUserData();
   return (
     <Wrapper>
       <BalanceTitle>You have</BalanceTitle>
       <BalanceAmount>
-        {query.data?.balance ? currencyFormatter(query.data?.balance) : null}
+        {balanceQuery.data?.balance
+          ? currencyFormatter(balanceQuery.data?.balance)
+          : null}
       </BalanceAmount>
       <AccountTitle>Account No</AccountTitle>
-      <AccountValue>{query.data?.accountNo}</AccountValue>
+      <AccountValue>{balanceQuery.data?.accountNo}</AccountValue>
       <AccountTitle>Account Holder</AccountTitle>
       <AccountValue>{userData?.username}</AccountValue>
     </Wrapper>

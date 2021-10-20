@@ -6,7 +6,7 @@ import { Title, Wrapper } from "./styled";
 import Card from "./Card";
 
 const Transactions = () => {
-  const query = useQuery("transations", () =>
+  const query = useQuery("transactions", () =>
     getTransactions().then((r) => {
       return Array.from(r.data.data || [])
         .sort((a, b) => (a < b ? 1 : -1))

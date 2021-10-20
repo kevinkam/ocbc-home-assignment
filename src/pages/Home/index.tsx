@@ -15,7 +15,7 @@ const Home = () => {
     <>
       <Wrapper>
         <HeaderRow>
-          <a onClick={onLogout}>Logout</a>
+          <button onClick={onLogout}>Logout</button>
         </HeaderRow>
         <Balance />
         <Transactions />

@@ -12,15 +12,23 @@ export const Wrapper = styled.div`
     font-size: ${rem(14)};
   }
   input,
-  select {
+  select,
+  textarea {
+    font-family: "Lato", sans-serif;
     font-size: ${rem(18)};
     font-weight: 700;
-    height: ${rem(32)};
     line-height: ${rem(32)};
     padding: 0;
     width: 100%;
     border: none;
     outline: none;
+  }
+  input,
+  select {
+    height: ${rem(32)};
+  }
+  textarea {
+    resize: none;
   }
 `;
 

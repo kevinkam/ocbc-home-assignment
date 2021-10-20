@@ -5,6 +5,10 @@ export const Wrapper = styled.div`
   padding: ${rem(32)} ${rem(20)};
   border-radius: 30px;
   box-shadow: 0 0 10px 3px #ddd;
+  margin-bottom: ${rem(32)};
+  &:last-child {
+    margin-bottom: 0;
+  }
 `;
 
 export const DateTitle = styled.div`
@@ -34,7 +38,7 @@ export const Amount = styled.div`
   &.received {
     color: green;
   }
-  &.transferred {
+  &.transfer {
     color: #333;
   }
 `;
