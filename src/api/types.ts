@@ -13,18 +13,26 @@ export interface LoginResponse {
 export interface RegisterResponse
   extends Pick<LoginResponse, "status" | "token"> {}
 
-interface Sender {
+interface AccountInfo {
   accountNo: string;
   accountHolder: string;
 }
-export interface Transaction {
+
+interface CommonTransaction {
   transactionId: string;
   amount: number;
   transactionDate: string;
   description: string;
-  transactionType: string;
-  sender: Sender;
 }
+interface ReceivedTransaction extends CommonTransaction {
+  transactionType: "received";
+  sender: AccountInfo;
+}
+interface TransferTransaction extends CommonTransaction {
+  transactionType: "transfer";
+  receipient: AccountInfo;
+}
+export type Transaction = ReceivedTransaction | TransferTransaction;
 export interface TransactionsResponse {
   status: string;
   data: Transaction[];
@@ -48,5 +56,5 @@ export interface PayeesResponse {
 export interface SubmitTransferPayload {
   receipientAccountNo: string;
   amount: number;
-  description: string;
+  description?: string;
 }

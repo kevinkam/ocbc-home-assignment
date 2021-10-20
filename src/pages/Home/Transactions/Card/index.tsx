@@ -17,18 +17,22 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ date, list }) => (
   <Wrapper role="group">
     <DateTitle>{date}</DateTitle>
-    {list.map((item) => (
-      <TransactionRow key={item.transactionId}>
-        <div>
-          <AccountHolder>{item.sender.accountHolder}</AccountHolder>
-          <AccountNo>{item.sender.accountNo}</AccountNo>
-        </div>
-        <Amount className={item.transactionType}>
-          {item.transactionType === "transferred" ? "- " : null}
-          {currencyFormatter(item.amount, false)}
-        </Amount>
-      </TransactionRow>
-    ))}
+    {list.map((item) => {
+      const isReceived = item.transactionType === "received";
+      const account = isReceived ? item.sender : item.receipient;
+      return (
+        <TransactionRow key={item.transactionId}>
+          <div>
+            <AccountHolder>{account.accountHolder}</AccountHolder>
+            <AccountNo>{account.accountNo}</AccountNo>
+          </div>
+          <Amount className={item.transactionType}>
+            {!isReceived ? "- " : null}
+            {currencyFormatter(item.amount, false)}
+          </Amount>
+        </TransactionRow>
+      );
+    })}
   </Wrapper>
 );
 
