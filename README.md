@@ -28,7 +28,7 @@ Create an UI for user can
 - Check transaction
 - Transfer balance
 
-## Library using in this project
+## Libraries using in this project
 - [React.js](https://reactjs.org)
 - [React-Router](https://reactrouter.com)
 - [Styled-Components](https://styled-components.com)
