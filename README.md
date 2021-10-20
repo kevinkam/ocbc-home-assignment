@@ -19,4 +19,19 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+## Objective
 
+Create a UI for user can
+- Register
+- Signup
+- Check balance
+- Check transaction
+- Transfer balance
+
+## Library using in this project
+- [React.js](https://reactjs.org)
+- [React-Router](https://reactrouter.com)
+- [Styled-components](https://styled-components.com)
+- [React-Query](https://react-query.tanstack.com)
+- [Axios](https://axios-http.com)
+- [Day.js](https://day.js.org)
