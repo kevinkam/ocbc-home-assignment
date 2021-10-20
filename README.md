@@ -25,7 +25,7 @@ Create an UI for user can
 - Register
 - Signup
 - Check balance
-- Check transaction
+- Check transactions
 - Transfer balance
 
 ## Libraries using in this project
