@@ -100,7 +100,9 @@ const Register = () => {
       </FormField>
       {serverError && <SystemAlert role="alert">{serverError}</SystemAlert>}
       <FloatingActions>
-        <CTAButton type="submit">REGISTER</CTAButton>
+        <CTAButton type="submit" role="button">
+          REGISTER
+        </CTAButton>
       </FloatingActions>
     </StyledForm>
   );

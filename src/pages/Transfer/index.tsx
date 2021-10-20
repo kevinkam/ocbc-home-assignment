@@ -61,7 +61,9 @@ const Transfer = () => {
         <Description />
         {systemError && <SystemAlert role="alert">{systemError}</SystemAlert>}
         <FloatingActions>
-          <CTAButton type="submit">Transfer Now</CTAButton>
+          <CTAButton type="submit" role="button">
+            Transfer Now
+          </CTAButton>
         </FloatingActions>
       </StyledForm>
     </FormProvider>

@@ -80,8 +80,10 @@ const Login = () => {
       </FormField>
       {serverError && <SystemAlert role="alert">{serverError}</SystemAlert>}
       <FloatingActions>
-        <CTAButton type="submit">LOGIN</CTAButton>
-        <CTAButton as={Link} to="/register" className="inverted">
+        <CTAButton type="submit" role="button">
+          LOGIN
+        </CTAButton>
+        <CTAButton as={Link} to="/register" className="inverted" role="button">
           REGISTER
         </CTAButton>
       </FloatingActions>

@@ -15,13 +15,15 @@ const Home = () => {
     <>
       <Wrapper>
         <HeaderRow>
-          <button onClick={onLogout}>Logout</button>
+          <button onClick={onLogout} role="button">
+            Logout
+          </button>
         </HeaderRow>
         <Balance />
         <Transactions />
       </Wrapper>
       <FloatingActions>
-        <CTAButton as={Link} to="/transfer">
+        <CTAButton as={Link} to="/transfer" role="button">
           Make Transfer
         </CTAButton>
       </FloatingActions>

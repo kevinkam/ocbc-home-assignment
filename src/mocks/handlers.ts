@@ -1,6 +1,28 @@
 import { rest } from "msw";
 
 export const handlers = [
+  rest.post(
+    "https://green-thumb-64168.uc.r.appspot.com/register",
+    (req, res, ctx) =>
+      res(
+        ctx.json({
+          status: "success",
+          token: "asdaskudhsdgfjsiurgyoriytuireytiurywet",
+        })
+      )
+  ),
+  rest.post(
+    "https://green-thumb-64168.uc.r.appspot.com/login",
+    (req, res, ctx) =>
+      res(
+        ctx.json({
+          status: "success",
+          token: "asdaskudhsdgfjsiurgyoriytuireytiurywet",
+          username: "test",
+          accountNo: "2970-111-3648",
+        })
+      )
+  ),
   rest.get(
     "https://green-thumb-64168.uc.r.appspot.com/balance",
     (req, res, ctx) =>

@@ -51,7 +51,7 @@ describe("empty fields validation", () => {
 });
 
 test("login API failed response", async () => {
-  server.resetHandlers(
+  server.use(
     rest.post(
       "https://green-thumb-64168.uc.r.appspot.com/login",
       (req, res, ctx) =>
