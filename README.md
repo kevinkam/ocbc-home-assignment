@@ -35,6 +35,7 @@ Create an UI for user can
 - [React-Query](https://react-query.tanstack.com)
 - [Axios](https://axios-http.com)
 - [Day.js](https://day.js.org)
+- [React-Hook-Form](https://react-hook-form.com)
 
 ## Written in
 - [TypeScript](https://www.typescriptlang.org)

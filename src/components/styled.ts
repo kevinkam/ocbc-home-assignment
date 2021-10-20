@@ -7,8 +7,8 @@ export const PageTitle = styled.h2`
 `;
 
 export const StyledForm = styled.form`
-  min-height: calc(100vh - ${rem(64)});
-  padding: ${rem(32)} ${rem(16)};
+  min-height: calc(100vh - ${rem(32 + 112)});
+  padding: ${rem(32)} ${rem(16)} ${rem(112)};
   display: flex;
   flex-direction: column;
   transition: all 0.3s;
@@ -58,4 +58,5 @@ export const FloatingActions = styled.div`
   left: 0;
   right: 0;
   padding: ${rem(32)} ${rem(16)};
+  background: #fff;
 `;
