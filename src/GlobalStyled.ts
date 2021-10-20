@@ -7,6 +7,14 @@ const GlobalStyled = createGlobalStyle`
   }
   body {
     font-family: 'Lato', sans-serif;
+    background: #333;
+  }
+  #root {
+    background:#fff;
+    max-width: 375px;
+    max-height: 812px;
+    margin: auto;
+    transform: translateY(0);
   }
 `;
 
