@@ -8,7 +8,7 @@ import {
   SystemAlert,
 } from "../../components/styled";
 import { FormProvider, useForm } from "react-hook-form";
-import { useMutation, useQuery, useQueryClient } from "react-query";
+import { useMutation, useQueryClient } from "react-query";
 import { submitTransfer } from "../../api";
 import Payees from "./fields/Payees";
 import Amount from "./fields/Amount";

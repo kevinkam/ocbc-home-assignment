@@ -1,6 +1,7 @@
-import { Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import React from "react";
 import PrivateRoute from "./components/PrivateRoute";
+import { getLocalUserData } from "./utils";
 
 const Login = React.lazy(() => import("./pages/Login"));
 const Register = React.lazy(() => import("./pages/Register"));
@@ -29,6 +30,12 @@ const Routing = () => {
           path="/transfer"
           needAuthorised
           renderComponent={Transfer}
+        />
+        <Route
+          render={() => {
+            const userData = getLocalUserData();
+            return !!userData ? <Redirect to="/" /> : <Redirect to="/login" />;
+          }}
         />
       </Switch>
     </React.Suspense>
