@@ -9,7 +9,7 @@ const Transactions = () => {
   const query = useQuery("transactions", () =>
     getTransactions().then((r) => {
       return Array.from(r.data.data || [])
-        .sort((a, b) => (a < b ? 1 : -1))
+        .sort((a, b) => (a.transactionDate < b.transactionDate ? 1 : -1))
         .reduce<[string, Transaction[]][]>((r, item) => {
           const date = dayjs(item.transactionDate).format("D MMM YYYY");
           const lastIndex = r.length - 1;
