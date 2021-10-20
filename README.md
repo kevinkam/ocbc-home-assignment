@@ -21,7 +21,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ## Objective
 
-Create a UI for user can
+Create an UI for user can
 - Register
 - Signup
 - Check balance
@@ -31,7 +31,10 @@ Create a UI for user can
 ## Library using in this project
 - [React.js](https://reactjs.org)
 - [React-Router](https://reactrouter.com)
-- [Styled-components](https://styled-components.com)
+- [Styled-Components](https://styled-components.com)
 - [React-Query](https://react-query.tanstack.com)
 - [Axios](https://axios-http.com)
 - [Day.js](https://day.js.org)
+
+## Written in
+- [TypeScript](https://www.typescriptlang.org)
