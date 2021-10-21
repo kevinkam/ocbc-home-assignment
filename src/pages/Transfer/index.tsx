@@ -1,21 +1,15 @@
 import classnames from "classnames";
 import BackButton from "../../components/BackButton";
-import {
-  CTAButton,
-  FloatingActions,
-  PageTitle,
-  StyledForm,
-  SystemAlert,
-} from "../../components/styled";
-import { FormProvider, useForm } from "react-hook-form";
-import { useMutation, useQueryClient } from "react-query";
-import { submitTransfer } from "../../api";
+import {CTAButton, FloatingActions, PageTitle, StyledForm, SystemAlert,} from "../../components/styled";
+import {FormProvider, useForm} from "react-hook-form";
+import {useMutation, useQueryClient} from "react-query";
+import {submitTransfer} from "../../api";
 import Payees from "./fields/Payees";
 import Amount from "./fields/Amount";
 import Description from "./fields/Description";
-import { FormValues } from "./types";
-import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import {FormValues} from "./types";
+import {useState} from "react";
+import {useHistory} from "react-router-dom";
 
 const Transfer = () => {
   const queryClient = useQueryClient();

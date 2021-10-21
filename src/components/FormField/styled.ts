@@ -27,6 +27,13 @@ export const Wrapper = styled.div`
   select {
     height: ${rem(32)};
   }
+  select {
+    appearance: none;
+    padding-right: ${rem(20)};
+    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMjAgNTEyIj48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGQ9Ik00MSAyODhoMjM4YzIxLjQgMCAzMiAyNS45IDE3IDQxTDE3NyA0NDhjLTkuNCA5LjQtMjQuNiA5LjQtMzMuOSAwTDI0IDMyOWMtMTUuMS0xNS4xLTQuNC00MSAxNy00MXoiPjwvcGF0aD48L3N2Zz4=)
+      no-repeat 95% -8px;
+    color: #000;
+  }
   textarea {
     resize: none;
   }

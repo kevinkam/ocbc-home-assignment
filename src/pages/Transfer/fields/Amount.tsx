@@ -22,6 +22,9 @@ const Amount = () => {
           valueAsNumber: true,
           validate(value) {
             const numberedValue = Number(value);
+            if(isNaN(numberedValue)) {
+              return "Invalid amount";
+            }
             if (numberedValue < 0.01) {
               return "Minimum amount is 0.01";
             }
